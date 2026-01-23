@@ -7,3 +7,12 @@ test-ledger
 .yarn
 test-wallet.json
 .env
+
+# Next.js
+app/.next
+app/out
+app/build
+app/.vercel
+app/*.tsbuildinfo
+app/next-env.d.ts
+app/.env*
