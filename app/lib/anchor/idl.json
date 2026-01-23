@@ -1,0 +1,641 @@
+{
+  "address": "DJPC2oUD3YkjEF2EKmcuStte92vSBrYh9nZaEmna9RmJ",
+  "metadata": {
+    "name": "blink_tipping",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "initialize_creator",
+      "discriminator": [
+        29,
+        153,
+        44,
+        99,
+        52,
+        172,
+        81,
+        115
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "creator_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  114,
+                  101,
+                  97,
+                  116,
+                  111,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "creator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "sol_vault",
+          "docs": [
+            "SOL vault - just a system account that will hold SOL"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  115,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "creator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "usdc_mint",
+          "docs": [
+            "The USDC mint address (devnet: 4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU)"
+          ]
+        },
+        {
+          "name": "usdc_vault",
+          "docs": [
+            "USDC vault - token account to hold USDC tips"
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  117,
+                  115,
+                  100,
+                  99
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "creator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_platform_config",
+      "discriminator": [
+        23,
+        52,
+        237,
+        53,
+        176,
+        235,
+        3,
+        187
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "platform_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "send_tip",
+      "discriminator": [
+        231,
+        88,
+        56,
+        242,
+        241,
+        6,
+        31,
+        59
+      ],
+      "accounts": [
+        {
+          "name": "tipper",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "creator"
+        },
+        {
+          "name": "creator_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  114,
+                  101,
+                  97,
+                  116,
+                  111,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "creator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "sol_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  115,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "creator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "usdc_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  117,
+                  115,
+                  100,
+                  99
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "creator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "tipper_usdc_account",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "currency",
+          "type": {
+            "defined": {
+              "name": "Currency"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "withdraw_tips",
+      "discriminator": [
+        107,
+        192,
+        228,
+        68,
+        165,
+        120,
+        164,
+        23
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "creator_account"
+          ]
+        },
+        {
+          "name": "creator_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  114,
+                  101,
+                  97,
+                  116,
+                  111,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "creator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "creator_usdc_account",
+          "writable": true
+        },
+        {
+          "name": "sol_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  115,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "creator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "usdc_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  117,
+                  115,
+                  100,
+                  99
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "creator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "platform_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "platform_wallet",
+          "writable": true
+        },
+        {
+          "name": "platform_usdc",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "currency",
+          "type": {
+            "defined": {
+              "name": "Currency"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "CreatorAccount",
+      "discriminator": [
+        222,
+        163,
+        32,
+        169,
+        204,
+        8,
+        200,
+        32
+      ]
+    },
+    {
+      "name": "PlatformConfig",
+      "discriminator": [
+        160,
+        78,
+        128,
+        0,
+        248,
+        83,
+        230,
+        160
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InsufficientBalance",
+      "msg": "Insufficient balance in vault"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidFeeBasisPoints",
+      "msg": "Invalid fee basis points (must be <= 10000)"
+    },
+    {
+      "code": 6002,
+      "name": "Unauthorized",
+      "msg": "Unauthorized: Only platform authority can perform this action"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidCurrency",
+      "msg": "Invalid currency type"
+    },
+    {
+      "code": 6004,
+      "name": "ArithmeticOverflow",
+      "msg": "Arithmetic overflow"
+    }
+  ],
+  "types": [
+    {
+      "name": "CreatorAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "creator",
+            "docs": [
+              "Creator's wallet address"
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "total_tips_sol",
+            "docs": [
+              "Total SOL tips received (in lamports)"
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "total_tips_usdc",
+            "docs": [
+              "Total USDC tips received (in token amount)"
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "tip_count",
+            "docs": [
+              "Number of tips received"
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "sol_vault_bump",
+            "docs": [
+              "SOL vault PDA bump"
+            ],
+            "type": "u8"
+          },
+          {
+            "name": "usdc_vault_bump",
+            "docs": [
+              "USDC vault PDA bump"
+            ],
+            "type": "u8"
+          },
+          {
+            "name": "bump",
+            "docs": [
+              "Creator account PDA bump"
+            ],
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Currency",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "SOL"
+          },
+          {
+            "name": "USDC"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlatformConfig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "docs": [
+              "Platform authority (owner)"
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "fee_basis_points",
+            "docs": [
+              "Fee in basis points (25 = 0.25%)"
+            ],
+            "type": "u16"
+          },
+          {
+            "name": "total_fees_collected_sol",
+            "docs": [
+              "Total fees collected in SOL"
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "total_fees_collected_usdc",
+            "docs": [
+              "Total fees collected in USDC"
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "docs": [
+              "Platform config PDA bump"
+            ],
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}
