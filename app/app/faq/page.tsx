@@ -76,6 +76,9 @@ export default function FAQPage() {
                                 <p className="mt-1">
                                     A "Super Link" designed for X/Twitter. When posted, it transforms into an interactive card with "Tip" buttons, allowing users to pay you <strong>without leaving the current page they are on</strong>.
                                 </p>
+                                <p className="mt-2 text-sm text-purple-800 bg-purple-50 p-2 rounded">
+                                    <strong>Note:</strong> Since this demo is running on <strong>Devnet</strong>, the Twitter card preview will only work on <a href="https://dial.to" target="_blank" className="underline hover:text-purple-900">dial.to</a> (set to Devnet). Direct Twitter integration requires a Mainnet deployment.
+                                </p>
                             </div>
                         </div>
                     </div>

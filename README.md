@@ -4,6 +4,11 @@ A decentralized, non-custodial tipping platform on Solana that integrates with *
 
 ![System Architecture Infographic](app/public/infographic.png)
 
+> [!IMPORTANT]
+> **Devnet Notice**: This project is currently deployed on **Solana Devnet**.
+> *   **Testing**: You can test the "Blink" functionality fully using [dial.to](https://dial.to) (set to Devnet).
+> *   **Twitter/X Integration**: Direct integration on X.com requires the project to be on **Mainnet** and registered with the Dialect Registry. For now, please use `dial.to` or the local demo to see it in action!
+
 ## 📂 Project Structure
 
 This is a **monorepo** containing both the Solana smart contract (backend) and the Next.js application (frontend).
