@@ -44,7 +44,7 @@ export default function FAQPage() {
                                 <li>Paste that URL into a post on X (Twitter).</li>
                             </ol>
                             <p>
-                                Viewers with a compatible wallet (like Phantom or Backpack) will see a "Tip" button interface appear directly in your tweet!
+                                Viewers with a compatible wallet (like Phantom or Solflare) will see a "Tip" button interface appear directly on the same page!
                             </p>
                         </div>
                     </div>
@@ -74,7 +74,7 @@ export default function FAQPage() {
                             <div>
                                 <strong className="text-purple-600">Blink URL:</strong>
                                 <p className="mt-1">
-                                    A "Super Link" designed for X/Twitter. When posted, it transforms into an interactive card with "Tip" buttons, allowing users to pay you <strong>without leaving their timeline</strong>. This drives much higher conversion!
+                                    A "Super Link" designed for X/Twitter. When posted, it transforms into an interactive card with "Tip" buttons, allowing users to pay you <strong>without leaving the current page they are on</strong>.
                                 </p>
                             </div>
                         </div>
@@ -91,26 +91,6 @@ export default function FAQPage() {
                         <p className="text-gray-500 text-sm mt-3 bg-gray-50 p-3 rounded-lg">
                             Example: If you withdraw 100 USDC, you receive 99.75 USDC, and the platform fee is 0.25 USDC.
                         </p>
-                    </div>
-
-                    {/* Q6 - Tutorials */}
-                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow duration-200">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3">
-                            Video Tutorial
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4">
-                            Want to see exactly how to set up your Blink? Watch our step-by-step guide below.
-                        </p>
-                        <div className="aspect-w-16 aspect-h-9 bg-gray-100 rounded-lg flex items-center justify-center h-64 border-2 border-dashed border-gray-300">
-                            <div className="text-center text-gray-500">
-                                <svg className="mx-auto h-12 w-12 text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <p className="font-medium">Video Coming Soon!</p>
-                                <p className="text-sm">We're recording a fresh guide for you.</p>
-                            </div>
-                        </div>
                     </div>
 
                     {/* Q7 */}
