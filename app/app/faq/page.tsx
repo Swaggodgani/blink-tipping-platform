@@ -89,10 +89,10 @@ export default function FAQPage() {
                             Are there any fees?
                         </h3>
                         <p className="text-gray-600 leading-relaxed">
-                            Yes, to maintain this platform, we charge a small platform fee of <strong>0.25%</strong> on withdrawals.
+                            Yes, but they are extremely low. We charge a small platform fee of <strong>0.25%</strong> on withdrawals.
                         </p>
                         <p className="text-gray-500 text-sm mt-3 bg-gray-50 p-3 rounded-lg">
-                            Example: If you withdraw 100 USDC, you receive 99.75 USDC, and the platform fee is 0.25 USDC.
+                            <span className="font-semibold text-purple-600">Why this matters:</span> Traditional platforms (like Patreon or Gumroad) often take <strong>5-10%</strong>, and credit card processors take another 2.9% + 30¢. Our 0.25% fee is roughly <strong>10x-20x cheaper</strong> than Web2 alternatives.
                         </p>
                     </div>
 
