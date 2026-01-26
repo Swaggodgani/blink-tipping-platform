@@ -4,6 +4,8 @@ import { getProgram } from '@/lib/anchor/setup';
 import { USDC_MINT } from '@/lib/anchor/constants';
 import { getAssociatedTokenAddress_Unchecked } from '@/lib/utils/token';
 
+export const dynamic = 'force-dynamic';
+
 // CORS headers required for Blinks/Actions
 const ACTIONS_CORS_HEADERS = {
     'Access-Control-Allow-Origin': '*',
