@@ -42,7 +42,7 @@ export default function TestPage() {
                     </p>
                     <div className="flex flex-col gap-1 text-left bg-white p-3 rounded border border-red-100 text-xs">
                         <span className="text-gray-500 font-medium">Your Wallet:</span>
-                        <code className="text-gray-700 break-all">{wallet.publicKey.toString()}</code>
+                        <code className="text-gray-700 break-all">{wallet.publicKey?.toString()}</code>
                     </div>
                 </div>
             </div>
