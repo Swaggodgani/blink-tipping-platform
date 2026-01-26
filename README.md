@@ -2,6 +2,8 @@
 
 A decentralized, non-custodial tipping platform on Solana that integrates with **Solana Blinks/Actions** to allow tipping directly from X (formerly Twitter).
 
+![System Architecture Infographic](app/public/infographic.png)
+
 ## 📂 Project Structure
 
 This is a **monorepo** containing both the Solana smart contract (backend) and the Next.js application (frontend).

@@ -33,6 +33,9 @@ export default function FAQPage() {
                         <h3 className="text-xl font-bold text-gray-900 mb-3">
                             How does it work?
                         </h3>
+                        <div className="mb-4 rounded-lg overflow-hidden border border-gray-200">
+                            <img src="/infographic.png" alt="Blink Tipping Architecture Infographic" className="w-full h-auto" />
+                        </div>
                         <div className="text-gray-600 leading-relaxed space-y-4">
                             <p>It's simple:</p>
                             <ol className="list-decimal list-inside space-y-2 ml-2">
