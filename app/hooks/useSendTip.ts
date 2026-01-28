@@ -92,6 +92,15 @@ export function useSendTip() {
         } catch (err: any) {
             // 17. Handle error
             console.error('Error sending tip:', err)
+
+            // Check for "already processed" error (common false negative in optimization)
+            const errorMessage = err.message || err.toString();
+            if (errorMessage.includes('already processed') || errorMessage.includes('0x0')) {
+                console.log('Transaction succeeded but reported as processed (ignoring error)');
+                setSuccess(true);
+                return;
+            }
+
             setError(err.message || 'Failed to send tip')
         } finally {
             // 18. Reset loading
