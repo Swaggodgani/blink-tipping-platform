@@ -5,7 +5,7 @@
  * IDL can be found at `target/idl/blink_tipping.json`.
  */
 export type BlinkTipping = {
-  "address": "DJPC2oUD3YkjEF2EKmcuStte92vSBrYh9nZaEmna9RmJ",
+  "address": "Hgdc6LBYxZeXTpA3Dr53HxwxWf96wsQBX3tS1R8ArDNS",
   "metadata": {
     "name": "blinkTipping",
     "version": "0.1.0",
