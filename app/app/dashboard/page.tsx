@@ -5,6 +5,7 @@ import { InitializeCreator } from '@/components/dashboard/InitializeCreator'
 import { TipStats } from '@/components/dashboard/TipStats'
 import { WithdrawForm } from '@/components/dashboard/WithdrawForm'
 import { BlinkGenerator } from '@/components/dashboard/BlinkGenerator'
+import { AdminPanel } from '@/components/dashboard/AdminPanel'
 import { useCreatorAccount } from '@/hooks/useCreatorAccount'
 
 export default function Dashboard() {
@@ -54,6 +55,9 @@ export default function Dashboard() {
 
                 {/* Content */}
                 <div className="space-y-6">
+                    {/* Admin Panel (Only visible to Authority) */}
+                    <AdminPanel />
+
                     {/* If no creator account, show initialize */}
                     {!creatorData && <InitializeCreator />}
 
