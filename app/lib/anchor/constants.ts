@@ -7,7 +7,7 @@ export const PROGRAM_ID = new PublicKey(
 
 // USDC Mint on devnet (test token you can mint)
 export const USDC_MINT = new PublicKey(
-    (process.env.NEXT_PUBLIC_USDC_MINT || '6bEbNy2gUKrh37Skvb5ov2UudpfCUfZv5L7QZMNeoqCk').trim()
+    (process.env.NEXT_PUBLIC_USDC_MINT || 'Gh9ZwEmdLJ8DscKNTkTqPbNwLNNBjuSzaG9Vp2KGtKJr').trim()
 );
 
 // Platform config PDA seeds

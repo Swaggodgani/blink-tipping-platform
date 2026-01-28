@@ -3,6 +3,7 @@ import { BN } from '@coral-xyz/anchor';
 import { getProgram } from '@/lib/anchor/setup';
 import { USDC_MINT } from '@/lib/anchor/constants';
 import { getAssociatedTokenAddress_Unchecked } from '@/lib/utils/token';
+import { createAssociatedTokenAccountInstruction, ASSOCIATED_TOKEN_PROGRAM_ID, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 
 export const dynamic = 'force-dynamic';
 
@@ -140,6 +141,26 @@ export async function POST(
             tipperPubkey
         );
 
+        // Build transaction
+        const transaction = new Transaction();
+
+        // If currency is USDC, check if user has an ATA. If not, create it.
+        if (currency === 'USDC') {
+            const accountInfo = await connection.getAccountInfo(tipperUsdcAccount);
+            if (!accountInfo) {
+                console.log('Tipper USDC account missing. Adding create instruction.');
+                const createAtaIx = createAssociatedTokenAccountInstruction(
+                    tipperPubkey, // payer
+                    tipperUsdcAccount, // associatedToken
+                    tipperPubkey, // owner
+                    USDC_MINT, // mint
+                    TOKEN_PROGRAM_ID,
+                    ASSOCIATED_TOKEN_PROGRAM_ID
+                );
+                transaction.add(createAtaIx);
+            }
+        }
+
         // Build currency enum
         const currencyEnum = currency === 'SOL' ? { sol: {} } : { usdc: {} };
 
@@ -153,8 +174,7 @@ export async function POST(
             })
             .instruction();
 
-        // Build transaction
-        const transaction = new Transaction();
+        // Build transaction (instantiated above)
         transaction.add(instruction);
 
         // Set recent blockhash and fee payer
