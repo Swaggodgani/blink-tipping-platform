@@ -7,7 +7,7 @@ mod state;
 use error::*;
 use instructions::*;
 use state::*;
-declare_id!("Hgdc6LBYxZeXTpA3Dr53HxwxWf96wsQBX3tS1R8ArDNS");
+declare_id!("6KMw7CqQMKnUg7RWq1815zNhJXBZU1woEZNDkZ2n7XmK");
 #[program]
 
 pub mod blink_tipping {

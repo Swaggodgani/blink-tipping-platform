@@ -6,10 +6,10 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-blink_tipping = "Hgdc6LBYxZeXTpA3Dr53HxwxWf96wsQBX3tS1R8ArDNS"
+blink_tipping = "6KMw7CqQMKnUg7RWq1815zNhJXBZU1woEZNDkZ2n7XmK"
 
 [programs.devnet]
-blink_tipping = "Hgdc6LBYxZeXTpA3Dr53HxwxWf96wsQBX3tS1R8ArDNS"
+blink_tipping = "6KMw7CqQMKnUg7RWq1815zNhJXBZU1woEZNDkZ2n7XmK"
 
 [registry]
 url = "https://api.apr.dev"
